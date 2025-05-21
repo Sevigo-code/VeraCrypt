@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Download, BookOpen, Lock, CheckCircle } from 'lucide-react';
+import VeraCryptBanner from '../images/VeraCrypt-banner.png';
 
 const Home = () => {
   const features = [
@@ -53,7 +54,7 @@ const Home = () => {
           <div className="md:w-1/3 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-1 bg-white/30 rounded-full blur-xl"></div>
-              <Shield className="h-48 w-48 text-white relative" />
+              <img src={VeraCryptBanner} alt="VeraCrypt Banner" className="h-72 w-72 object-contain relative" />
             </div>
           </div>
         </div>
