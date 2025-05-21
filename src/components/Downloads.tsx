@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Download, AppWindow as Windows, Apple, Link as Linux, Server, Shield, ChevronDown, ChevronUp, HardDrive, Cpu } from 'lucide-react';
+import { SiLinux, SiApple } from 'react-icons/si';
+import { FaWindows } from 'react-icons/fa';
 
 interface DownloadOption {
   name: string;
@@ -19,6 +21,18 @@ interface OSData {
   color: string;
 }
 
+const Penguin = ({ className = "" }) => (
+  <svg className={className} viewBox="0 0 64 64" fill="none">
+    <ellipse cx="32" cy="40" rx="18" ry="20" fill="#fff"/>
+    <ellipse cx="32" cy="32" rx="16" ry="24" fill="#000"/>
+    <ellipse cx="24" cy="36" rx="3" ry="6" fill="#fff"/>
+    <ellipse cx="40" cy="36" rx="3" ry="6" fill="#fff"/>
+    <ellipse cx="28" cy="28" rx="2" ry="3" fill="#fff"/>
+    <ellipse cx="36" cy="28" rx="2" ry="3" fill="#fff"/>
+    <polygon points="32,44 36,52 28,52" fill="#ffb300"/>
+  </svg>
+);
+
 const Downloads = () => {
   const [activeOS, setActiveOS] = useState<number>(0);
   const [showAllVersions, setShowAllVersions] = useState<boolean>(false);
@@ -26,7 +40,7 @@ const Downloads = () => {
   const osData: OSData[] = [
     {
       name: 'Windows',
-      icon: <Windows className="h-8 w-8" />,
+      icon: <FaWindows className="h-8 w-8" />,
       description: 'For Windows 11, 10, 8.1, 8, 7',
       color: 'blue',
       primaryDownload: {
@@ -66,7 +80,7 @@ const Downloads = () => {
     },
     {
       name: 'macOS',
-      icon: <Apple className="h-8 w-8" />,
+      icon: <SiApple className="h-8 w-8" />,
       description: 'For macOS 11+ and Intel/Apple Silicon',
       color: 'gray',
       primaryDownload: {
@@ -106,7 +120,7 @@ const Downloads = () => {
     },
     {
       name: 'Linux',
-      icon: <Linux className="h-8 w-8" />,
+      icon: <SiLinux className="h-8 w-8" />,
       description: 'For Ubuntu, Debian, Fedora and others',
       color: 'green',
       primaryDownload: {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Lock, Menu, X } from 'lucide-react';
+import { Shield, Lock, Menu, X, Heart } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,19 +27,37 @@ const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          {['Home', 'Documentation', 'Downloads', 'Donate'].map((item) => (
+        <nav className="hidden md:flex space-x-8 items-center">
+          {['Home', 'Documentation', 'Downloads'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`}
-              className="text-gray-700 hover:text-blue-700 font-medium transition-colors"
+              className="text-gray-700 hover:text-blue-700 font-medium transition-colors flex items-center h-10"
+              style={{alignItems: 'center', display: 'flex'}}
             >
               {item}
             </a>
           ))}
           <a 
+            href="#donate"
+            className="text-gray-700 hover:text-blue-700 font-medium transition-colors flex items-center"
+          >
+            <Heart className="h-4 w-4 mr-1 text-red-500" />
+            <span>Donate</span>
+          </a>
+          <a 
+            href="https://sourceforge.net/p/veracrypt/discussion/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-blue-700 font-medium transition-colors flex items-center h-10"
+            style={{alignItems: 'center', display: 'flex'}}
+          >
+            Go to Forum
+          </a>
+          <a 
             href="#download" 
-            className="bg-blue-700 text-white px-4 py-2 rounded-md flex items-center space-x-2 hover:bg-blue-800 transition-colors"
+            className="bg-blue-700 text-white px-4 py-2 rounded-md flex items-center space-x-2 hover:bg-blue-800 transition-colors h-10"
+            style={{alignItems: 'center', display: 'flex'}}
           >
             <Lock className="h-4 w-4" />
             <span>Download</span>
@@ -63,7 +81,7 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {['Home', 'Documentation', 'Downloads', 'Donate'].map((item) => (
+            {['Home', 'Documentation', 'Downloads'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -73,6 +91,23 @@ const Header = () => {
                 {item}
               </a>
             ))}
+            <a 
+              href="#donate"
+              className="text-gray-700 hover:text-blue-700 font-medium transition-colors block py-2 flex items-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Heart className="h-4 w-4 mr-1 text-red-500" />
+              <span>Donate</span>
+            </a>
+            <a 
+              href="https://sourceforge.net/p/veracrypt/discussion/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-blue-700 font-medium transition-colors block py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Forum
+            </a>
             <a 
               href="#download" 
               className="bg-blue-700 text-white px-4 py-2 rounded-md flex items-center space-x-2 hover:bg-blue-800 transition-colors w-full justify-center"
