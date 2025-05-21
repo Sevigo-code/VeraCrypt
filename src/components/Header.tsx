@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Lock, Menu, X, Heart } from 'lucide-react';
+import { Lock, Menu, X, Heart } from 'lucide-react';
+import VeraCryptLogo from '../images/VeraCrypt128x128.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,8 +22,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <Shield className="h-8 w-8 text-blue-700" />
+        <div className="flex items-center" style={{ gap: '1.5rem' }}>
+          <img src={VeraCryptLogo} alt="VeraCrypt Logo" style={{ height: '62px', width: '62px' }} />
           <span className="font-bold text-2xl text-gray-900">VeraCrypt</span>
         </div>
         
