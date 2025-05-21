@@ -8,6 +8,7 @@ import {
   Heart, 
   ExternalLink 
 } from 'lucide-react';
+import VeraCryptLogo from '../images/VeraCrypt128x128.png';
 
 const Footer = () => {
   return (
@@ -15,8 +16,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Shield className="h-8 w-8 text-blue-500" />
+            <div className="flex items-center space-x-6 mb-4">
+              <img src={VeraCryptLogo} alt="VeraCrypt Logo" className="h-16 w-16" />
               <span className="font-bold text-2xl text-white">VeraCrypt</span>
             </div>
             <p className="mb-4">
